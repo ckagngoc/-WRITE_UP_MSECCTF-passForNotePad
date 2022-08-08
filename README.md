@@ -4,7 +4,7 @@
 #### Sau cuộc thi căng thẳng hơn 8 tiếng và vượt qua cơn trầm cảm của bản thân vì quá nghèo nàn kiến thức, xốc lại tinh thần chia sẻ lại quá trình làm bài của mình, bài không quá cao siêu, cách làm còn nhiều lủng củng, ming mọi người đọc và cho nhận xét chứ đừng buông lời cay đắng !!!
 Bài cho file nén PassForNotePad.rar giải nén ta được 3 file như hình:
 
-![markdown](https://images.viblo.asia/518eea86-f0bd-45c9-bf38-d5cb119e947d.png)
+[![markdown](https://imgur.com/aRfqC9G)
  
 Chạy thử chương trình trên *cmd* và nội dung file *README.txt* ta đoán đây là file mã hóa nội dung của file, và file *secret.txt.mta* là file đã được mã hóa:
 
