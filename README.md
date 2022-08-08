@@ -13,7 +13,7 @@ Chạy thử chương trình trên *cmd* và nội dung file *README.txt* ta đo
 
 Kiểm chứng bằng cách tạo 1 file *test.txt* với nội dung “conghoaxahoichunghiavietnam” chạy file .exe với đối số là *file = test.txt, password = ckagngoc*
 
-![img]https://i.imgur.com/oV0PYAd.png[/img]
+![Imgur](https://i.imgur.com/oV0PYAd.png)
  
 Ta nhận được file có dạng *test.txt.mta* với nội dung có cấu trúc tương tự như file *secret.txt.mta*, đây chắc chắn là flag được mã hóa.
 Ném file .exe vào IDA, trong subview String ta thấy hàng loạt Proc có *py_* ở đầu, đây là file được build bằng Python:
