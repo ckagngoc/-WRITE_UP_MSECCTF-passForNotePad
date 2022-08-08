@@ -6,18 +6,18 @@ Bài cho file nén PassForNotePad.rar giải nén ta được 3 file như hình:
 
 <img scr="https://imgur.com/aRfqC9G">
  
-Chạy thử chương trình trên cmd và nội dung file README.txt ta đoán đây là file mã hóa nội dung của file và file secret.txt.mta là file đã được mã hóa:
+Chạy thử chương trình trên *cmd* và nội dung file *README.txt* ta đoán đây là file mã hóa nội dung của file, và file *secret.txt.mta* là file đã được mã hóa:
 
  
 
 
-Kiểm chứng bằng cách tạo 1 file test.txt với nội dung “conghoaxahoichunghiavietnam” chạy file .exe với đối số là file = test.txt, password = ckagngoc
+Kiểm chứng bằng cách tạo 1 file *test.txt* với nội dung “conghoaxahoichunghiavietnam” chạy file .exe với đối số là *file = test.txt, password = ckagngoc*
  
-Ta nhận được file có dạng test.txt.mta với nội dung có cấu trúc tương tự như file secret.txt.mta, đây chắc chắn là flag được mã hóa.
-Ném file .exe vào IDA, trong subview String ta thấy hàng loạt Proc có py_ ở đầu, đây là file được build bằng Python:
+Ta nhận được file có dạng *test.txt.mta* với nội dung có cấu trúc tương tự như file *secret.txt.mta*, đây chắc chắn là flag được mã hóa.
+Ném file .exe vào IDA, trong subview String ta thấy hàng loạt Proc có *py_* ở đầu, đây là file được build bằng Python:
  
-Sử dụng pyinstxtrator.py trích xuất nội dung file .exe:
-Command: python pyinstxtractor.py PassForNotePad.exe
+Sử dụng *pyinstxtrator.py* trích xuất nội dung file .exe:
+Command: `python pyinstxtractor.py PassForNotePad.exe`
 Nhận được được thông báo sau: 
 ```
 [+] Processing C:\Users\acer\Desktop\BaiCho\PassForNotePad\PassForNotePad.exe
