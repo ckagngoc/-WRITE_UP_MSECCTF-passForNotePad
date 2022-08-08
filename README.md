@@ -1,7 +1,7 @@
 # [WRITE UP] pass_for_notepad by MSECCTF 2022
 
 
-#### Sau cuộc thi căng thẳng hơn 8 tiếng và vượt qua cơn trầm cảm của bản thân vì quá nghèo nàn kiến thức, xốc lại tinh thần chia sẻ lại quá trình làm bài của mình, bài không quá cao siêu, cách làm còn nhiều lủng củng, ming mọi người đọc và cho nhận xét chứ đừng buông lời cay đắng !!!
+#### Sau cuộc thi căng thẳng hơn 8 tiếng và vượt qua cơn trầm cảm của bản thân vì quá nghèo nàn kiến thức, xốc lại tinh thần chia sẻ lại quá trình làm bài của mình, bài không quá cao siêu, cách làm còn nhiều lủng củng, mình mọi người đọc và cho nhận xét chứ đừng buông lời cay đắng !!!
 Bài cho file nén PassForNotePad.rar giải nén ta được 3 file như hình:
 
 ![Imgur](https://i.imgur.com/aRfqC9G.png)
