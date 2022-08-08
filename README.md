@@ -1,5 +1,3 @@
-# -WRITE_UP_MSECCTF-passForNotePad
-
 # [WRITE UP] pass_for_notepad by MSECCTF 2022
 
 
@@ -19,7 +17,7 @@ Ném file .exe vào IDA, trong subview String ta thấy hàng loạt Proc có py
 Sử dụng pyinstxtrator.py trích xuất nội dung file .exe:
 Command: python pyinstxtractor.py PassForNotePad.exe
 Nhận được được thông báo sau: 
-'''
+```
 [+] Processing C:\Users\acer\Desktop\BaiCho\PassForNotePad\PassForNotePad.exe
 [+] Pyinstaller version: 2.1+
 [+] Python version: 3.6
@@ -37,15 +35,15 @@ Nhận được được thông báo sau:
 [+] Successfully extracted pyinstaller archive: C:\Users\acer\Desktop\BaiCho\PassForNotePad\PassForNotePad.exe
 
 You can now use a python decompiler on the pyc files within the extracted directory
-'''
+```
 File được build bằng python 3.6, thì tải về rồi chạy lại với python 3.6 cho chắc ăn hô hô, trước mình có decompile python thì thấy không đúng builder thường decompile sẽ thất bại:
 Command: py -3.6 pyinstxtractor.py PassForNotePad.exe
 Nhận được file main.pyc
 Ta dùng uncompile6 để decompile code ra file main.py sẽ trông như thế này:
 Command: undecompyle6 -o . main.pyc
  
-	Vào xem code ta thấy hai def fnEncrypt và dnDecrypt
-'''
+Vào xem code ta thấy hai def fnEncrypt và dnDecrypt
+```
 def fnEncrypt(path_inp_txt, path_out_txt):
     f_inp = open(path_inp_txt, 'rb')
     f_out = open(path_out_txt, 'w')
@@ -96,9 +94,9 @@ def fnDecrypt(path_inp_txt, path_out_txt):
     f_inp.close()
     f_out.close()
 
-'''
+```
 Hàm main sẽ chạy hai def này tương ứng với hai đối số “-e|-d”, đọc def fnDecrypt ta thấy nó sẽ đọc 32 ký tự đầu của file mã hóa lưu vào password_in_file sau đó lấy 4 ký tự index là 6, 5, 0, 2 để mã hóa và so sánh với password_in_file:
-'''
+```
 password_in_file = d_inp[:32]
 d_inp = d_inp[32:]
 key = password[6] + password[5] + password[0] + password[2]
@@ -106,11 +104,11 @@ m = hashlib.md5(key.encode('utf-8'))
 key = m.digest()
 key = key.hex()
 if key != password_in_file:
-'''
+```
 4 ký tự trên được nối vào xâu key sau đó mã hóa md5 lưu kết quả vào m rồi chuyển lại vào key => decrypt md5 32 ký tự đầu file secret.txt.mta ta sẽ nhận được 4 ký tự có index là 6, 5, 0, 2 của password:
  
 Tiếp tục đọc code ta thấy key sẽ bằng “1234” + const SALT ở đầu sẽ là đối số để tạo crypter giải mã cho đoạn text còn lại của file secret.txt.mta từ đó ta có đoạn scrypt sau xử lý phần text còn lại: 
-'''
+```
 import hashlib, base64
 from Crypto.Cipher import DES
 writeFile = ''
@@ -123,6 +121,6 @@ dk, iv = key[:8], key[8:]
 crypter = DES.new(dk, DES.MODE_CBC, iv)
 d_out = crypter.decrypt(d_intern)
 print(d_out)
-'''
+```
 flag: **MSEC{pl4y_h4rd_w0rk_h4rd}**
 
